@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: #EFF1EC;
+  color: #1B2430;
+}
+
+/* Index-card tab shape: a cut top-right corner, like a physical divider tab.
+   Deliberately not a rounded-corner card — see the design plan's note on
+   avoiding SaaS-card sameness. */
+.card-tab {
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+}
+
+.card-tab-sm {
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+}
+
+/* Visible keyboard focus, consistent everywhere — never suppressed. */
+:focus-visible {
+  outline: 2px solid #3A6EA5;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* A single highlighter mark under active/current elements — the one place
+   boldness is spent, per the design plan. Applied selectively, not globally. */
+.highlighter-mark {
+  background-image: linear-gradient(to bottom, transparent 60%, #F2C94C 60%);
+}

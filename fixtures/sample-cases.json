@@ -1,0 +1,20 @@
+[
+  {
+    "id": "case-01",
+    "jd": "Senior Backend Engineer\n\nWe are looking for a Senior Backend Engineer with 5+ years of experience with Node.js and distributed systems. You will own our payments service end to end. Required: strong TypeScript, experience with PostgreSQL, and comfort mentoring junior engineers. Bonus points for prior fintech experience.",
+    "company_url": "https://www.gitlab.com",
+    "days": 5
+  },
+  {
+    "id": "case-02",
+    "jd": "Product Designer. 2 years experience. Figma.",
+    "company_url": "https://www.posthog.com",
+    "days": 3
+  },
+  {
+    "id": "case-03",
+    "jd": "We need someone great.",
+    "company_url": "https://this-domain-should-not-exist-example-12345.com",
+    "days": 7
+  }
+]

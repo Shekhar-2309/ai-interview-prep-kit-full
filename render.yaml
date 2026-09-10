@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: ai-interview-prep-kit-api
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GROQ_API_KEY
+        sync: false # set manually in the Render dashboard — never committed
+      - key: MONGODB_URI
+        sync: false # MongoDB Atlas free-tier connection string
+      - key: SESSION_SECRET
+        sync: false
+      - key: FRONTEND_ORIGIN
+        sync: false # the deployed Vercel URL, e.g. https://your-app.vercel.app
+      - key: PORT
+        value: "4000"
