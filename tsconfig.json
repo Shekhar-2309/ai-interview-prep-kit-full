@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2021",
     "module": "CommonJS",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node16",
     "lib": ["ES2021"],
     "outDir": "dist",
     "rootDir": ".",
