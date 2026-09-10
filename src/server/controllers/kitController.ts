@@ -142,7 +142,7 @@ export const editQuestion = asyncHandler(async (req: Request, res: Response) => 
   const userId = currentUserId(req);
   await getOwnedKit(req.params.id, userId); // ownership check
   const patch = EditQuestionRequestSchema.parse(req.body);
-  const doc = await builder.editQuestion(req.params.id, getVersion(req), req.params.questionId, patch);
+    const doc = await builder.editQuestion(req.params.id, getVersion(req), req.params.questionId, patch as any);
   res.json({ kit: doc.kit, version: doc.version });
 });
 

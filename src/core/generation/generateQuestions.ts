@@ -107,7 +107,7 @@ export async function generateQuestionsForCategory(
     schema: QuestionBatchSchema,
   });
 
-  return result.questions.map((q, i) => ({
+    return (result as any).questions.map((q: any, i: number) => ({
     id: `${input.idPrefix}${i + 1}`,
     requirement_ids: q.requirement_ids,
     category: input.category,
