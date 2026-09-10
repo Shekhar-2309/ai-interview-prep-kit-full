@@ -54,7 +54,7 @@ function CategorySection({
     const reordered = [...questions];
     [reordered[index], reordered[target]] = [reordered[target], reordered[index]];
     await ctx.mutate((kitId, version) =>
-      api.reorderQuestions(kitId, version, category, reordered.map((q) => q.id)) as any
+            api.reorderQuestions(kitId, category, version, reordered.map((q) => q.id)) as any
     );
   }
 
