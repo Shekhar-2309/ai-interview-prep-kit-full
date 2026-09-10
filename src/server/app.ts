@@ -8,7 +8,7 @@ import { config } from "./config";
 
 export function buildApp(): Express {
   const app = express();
-
+  app.set("trust proxy", 1);
   const isProduction = process.env.NODE_ENV === "production";
   if (isProduction && !process.env.FRONTEND_ORIGIN) {
     throw new Error(
