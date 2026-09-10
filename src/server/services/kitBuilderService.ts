@@ -140,6 +140,8 @@ export async function deleteQuestion(
 ): Promise<KitDoc> {
   return withKitMutation(kitId, expectedVersion, (kit) => {
     kit.questions = kit.questions.filter((q: Question) => q.id !== questionId);
+    const freshSchedule = buildSchedule(kit.role.requirements, kit.questions, kit.schedule.days_available);
+    kit.schedule = markGenerated(freshSchedule);
     return kit;
   });
 }
