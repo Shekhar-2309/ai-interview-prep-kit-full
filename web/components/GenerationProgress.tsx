@@ -30,7 +30,7 @@ export function GenerationProgress({
 
       <ol className="space-y-0">
         {STEP_ORDER.map((step, i) => {
-          const isDone = currentIndex > i || status === "completed";
+          const isDone = currentIndex > i;
           const isCurrent = currentIndex === i && status === "running";
           return (
             <li
